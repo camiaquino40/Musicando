@@ -2,10 +2,12 @@ const express = require('express')
 const Sequelize =require('sequelize')
 const app = express()
 
-const sequelize = new Sequelize('musicando', 'root','',{
-    host: localhost,
-    dialect:'mysql'
-})
+const cancionesRoutes = require('./routes/cancionesRoutes');
+const generosRoutes = require('./routes/generosRoutes');
+
+
+app.use('/canciones', cancionesRoutes);
+app.use('/generos', generosRoutes);
 
 
 
